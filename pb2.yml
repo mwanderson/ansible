@@ -1,0 +1,6 @@
+- name: Testing calling another playbook
+  hosts: localhost
+  tasks:
+    - name: Another hello message
+      debug:
+        msg: "Reached second playbook!"
