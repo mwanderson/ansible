@@ -6,3 +6,7 @@
         msg: "Hello World again!"
 
 - import_playbook: pb2.yml
+- import_playbook: pb2.yml
+- import_playbook: pb2.yml
+
+
