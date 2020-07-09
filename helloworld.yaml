@@ -1,8 +1,9 @@
 - name: Hello World Sample
   hosts: localhost
   
-  s3_bucket: napstfstate
-  s3_prefix: terraform/workshops
+  vars:
+    s3_bucket: napstfstate
+    s3_prefix: terraform/workshops
 
   tasks:
     - name: Hello Message
