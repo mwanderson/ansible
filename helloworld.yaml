@@ -5,7 +5,6 @@
       debug:
         msg: "Hello World again!"
 
-  tasks:
     - name: Testing pwd command
     - shell: pwd
       register: test_pwd
