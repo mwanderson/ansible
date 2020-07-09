@@ -19,7 +19,7 @@
        
     - name: property test
       debug:
-        msg: "{{ test_pwd.stdout_lines.count() }}"
+        msg: "The length/count of test_pwd.stdout_lines is: {{ test_pwd.stdout_lines|length }}"
 
 
 - import_playbook: pb2.yml
