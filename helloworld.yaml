@@ -13,6 +13,10 @@
       debug:
         msg: "{{ test_pwd }}"
 
+    - name: whatever
+      debug:
+        msg: "{{ test_pwd.stdout[0] }}"
+
 
 - import_playbook: pb2.yml
 - import_playbook: pb2.yml
