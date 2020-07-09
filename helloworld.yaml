@@ -15,7 +15,7 @@
 
     - name: whatever
       debug:
-        msg: "{{ test_pwd.stdout[0] }}"
+        msg: "{{ test_pwd.stdout_lines[0] }}"
 
 
 - import_playbook: pb2.yml
