@@ -21,9 +21,6 @@
       debug:
         msg: "The length/count of test_pwd.stdout_lines is: {{ test_pwd.stdout_lines|length }}"
           
-    - name: the final countdown
-      debug: msg={{item}} seconds to detonation
-      with_sequence: end=0 start=10
 
 # run other playbooks in order
 - import_playbook: pb2.yml
