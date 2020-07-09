@@ -6,7 +6,7 @@
         msg: "Hello World again!"
 
     - name: Testing pwd command
-      shell: pwd
+      shell: "pwd"
       register: test_pwd
       debug:
         msg: test_pwd
