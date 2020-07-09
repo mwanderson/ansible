@@ -6,6 +6,18 @@
     s3_prefix: terraform/workshops
 
   tasks:
+    - name: Check if bucket is valid and reachable
+      aws_s3:
+        bucket: "{{ s3_bucket }}"
+        prefix: "/"
+        mode: list
+        max_keys: 10
+      register: s3output
+      
+    - name: See what is in the s3 bucket
+      debug:
+        msg: "{{ s3output }}"
+
     #- name: Testing pwd command
     #  shell: "pwd"
     #  register: test_pwd
@@ -22,18 +34,7 @@
     #  debug:
     #    msg: "The length/count of test_pwd.stdout_lines is: {{ test_pwd.stdout_lines|length }}"
           
-    - name: Check if bucket is valid and reachable
-      aws_s3:
-        bucket: "{{ s3_bucket }}"
-        prefix: "/"
-        mode: list
-        max_keys: 10
-      register: s3output
-      
-  - name: See what is in the s3 bucket
-    debug:
-      msg: "{{ s3output }}"
-
+    
 # run other playbooks in order
 #- import_playbook: pb2.yml
 #- import_playbook: pb2.yml
