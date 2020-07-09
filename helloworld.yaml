@@ -1,5 +1,9 @@
 - name: Hello World Sample
   hosts: localhost
+  
+  s3_bucket: napstfstate
+  s3_prefix: terraform/workshops
+
   tasks:
     - name: Hello Message
       debug:
@@ -21,6 +25,13 @@
       debug:
         msg: "The length/count of test_pwd.stdout_lines is: {{ test_pwd.stdout_lines|length }}"
           
+    - name: Check if bucket is valid and reachable
+      aws_s3:
+        bucket: "{{ s3_bucket }}"
+        prefix: "/"
+        mode: list
+        max_keys: 10
+      register: s3output
 
 # run other playbooks in order
 - import_playbook: pb2.yml
