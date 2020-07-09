@@ -11,7 +11,7 @@
       
     - name: Check registered value
       debug:
-        msg: {{ test_pwd }}
+        msg: test_pwd.stdout
 
 
 - import_playbook: pb2.yml
