@@ -8,6 +8,8 @@
     - name: Testing pwd command
       shell: "pwd"
       register: test_pwd
+      
+    - name: Check registered value
       debug:
         msg: test_pwd
 
