@@ -4,3 +4,8 @@
     - name: Another hello message
       debug:
         msg: "Reached second playbook!"
+
+    - name: Checking to see if we can see a variable from another pb
+      debug:
+        msg: "{{ test_pwd }}"
+
