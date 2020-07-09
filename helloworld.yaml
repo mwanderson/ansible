@@ -5,6 +5,14 @@
       debug:
         msg: "Hello World again!"
 
+  tasks:
+    - name: Testing pwd command
+    - shell: pwd
+      register: test_pwd
+      debug:
+        msg: test_pwd
+
+
 - import_playbook: pb2.yml
 - import_playbook: pb2.yml
 - import_playbook: pb2.yml
