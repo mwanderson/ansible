@@ -16,6 +16,10 @@
     - name: whatever
       debug:
         msg: "{{ test_pwd.stdout_lines[0] }}"
+       
+    - name: property test
+      debug:
+        msg: "{{ test_pwd.stdout_lines.count() }}"
 
 
 - import_playbook: pb2.yml
