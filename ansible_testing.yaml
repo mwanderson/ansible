@@ -11,7 +11,7 @@
         bucket: "{{ s3_bucket }}"
         prefix: "{{ s3_prefix }}/"
         mode: list
-        max_keys: 10
+        max_keys: 100
       register: s3output
       
     - name: See what is in the s3 bucket
