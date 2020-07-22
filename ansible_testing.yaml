@@ -5,11 +5,12 @@
     s3_bucket: napstfstate
     s3_prefix: terraform/workshops
 
+  # {{ s3_prefix }}
   tasks:
     - name: Check if bucket is valid and reachable
       aws_s3:
         bucket: "{{ s3_bucket }}"
-        prefix: "{{ s3_prefix }}/"
+        prefix: "/"
         mode: list
         max_keys: 100
       register: s3output
