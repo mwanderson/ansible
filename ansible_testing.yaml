@@ -9,7 +9,7 @@
     - name: Check if bucket is valid and reachable
       aws_s3:
         bucket: "{{ s3_bucket }}"
-        prefix: "/"
+        prefix: "{{ s3_prefix }}/"
         mode: list
         max_keys: 10
       register: s3output
